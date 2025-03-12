@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:grocery_app/AppColors.dart';
 import 'package:grocery_app/CustomWidgets/global_button.dart';
+import 'package:grocery_app/SignIn/UI/sign_in.dart';
+import 'package:grocery_app/SignIn/UI/verification_code_ui.dart';
 
 class RecoveryPasswordScreen extends StatefulWidget {
   const RecoveryPasswordScreen({super.key});
@@ -117,7 +119,17 @@ class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
                 ],
               ),
               const SizedBox(height: 30),
-              GlobalButton(label: "Send", onTap: () {}),
+              GlobalButton(
+                label: "Send",
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const VerificationCodeScreen(),
+                    ),
+                  );
+                },
+              ),
               const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +137,12 @@ class _RecoveryPasswordScreenState extends State<RecoveryPasswordScreen> {
                   const Text("Back to "),
                   InkWell(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignInScreen(),
+                        ),
+                      );
                     },
                     child: Text(
                       "Sign In",

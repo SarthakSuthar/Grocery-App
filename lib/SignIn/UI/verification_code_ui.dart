@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/AppColors.dart';
 import 'package:grocery_app/CustomWidgets/global_button.dart';
+import 'package:grocery_app/SignIn/UI/new_password.dart';
 
 class VerificationCodeScreen extends StatefulWidget {
   const VerificationCodeScreen({super.key});
@@ -153,7 +154,16 @@ class VerificationCodeScreenState extends State<VerificationCodeScreen> {
                   ),
                 ],
               ),
-              GlobalButton(label: "Verify", onTap: () {})
+              GlobalButton(
+                  label: "Verify",
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NewPasswordScreen(),
+                      ),
+                    );
+                  })
             ],
           ),
         ),

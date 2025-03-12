@@ -131,10 +131,11 @@ class _SignInScreenState extends State<SignInScreen> {
                   InkWell(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const RecoveryPasswordScreen()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RecoveryPasswordScreen(),
+                        ),
+                      );
                     },
                     child: Text(
                       "Recovery Password",
